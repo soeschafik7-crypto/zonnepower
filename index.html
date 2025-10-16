@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zonne & Power — Powerbanks, Lampen & Zonnestroom</title>
+  <meta name="description" content="Verkoop van powerbanks, (zonne)lampen en zonnestroompakketten. Eenvoudige webshop-landingpagina." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#071229;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03);--radius:12px}
+    *{box-sizing:border-box}body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#e6eef6;background:linear-gradient(180deg,var(--bg),#071027 140%);min-height:100vh;padding:28px}
+    .container{max-width:1100px;margin:0 auto}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800}
+    nav{display:flex;gap:14px}
+    a{color:inherit;text-decoration:none}
+    .btn{background:var(--accent);padding:10px 14px;border-radius:10px;font-weight:600}
+
+    .hero{display:flex;gap:20px;align-items:center;background:var(--glass);padding:22px;border-radius:14px}
+    .hero .left{flex:1}
+    .hero h1{margin:0 0 10px;font-size:28px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .product{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;display:flex;flex-direction:column;gap:10px}
+    .product img{width:100%;height:160px;object-fit:cover;border-radius:8px;background:#081226}
+    .price{font-weight:700}
+    .small{font-size:13px;color:var(--muted)}
+
+    .cart{position:fixed;right:20px;bottom:20px;background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6);width:320px}
+    .cart h4{margin:0 0 8px}
+    .cart-list{max-height:220px;overflow:auto;margin-bottom:8px}
+    .cart-row{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+
+    section{margin-top:18px}
+    footer{margin-top:36px;color:var(--muted);text-align:center}
+
+    form{display:flex;flex-direction:column;gap:8px}
+    input,textarea,select{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+
+    @media (max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.cart{position:static;width:auto;margin-top:18px}}
+    @media (max-width:600px){.products{grid-template-columns:1fr}.hero{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">ZP</div>
+        <div>
+          <div style="font-weight:700">Zonne & Power</div>
+          <div style="font-size:13px;color:var(--muted)">Powerbanks, (zonne)lampen en zonnestroom</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#producten">Producten</a>
+        <a href="#service">Service</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="left">
+          <h1>Verkoop van slimme energie-oplossingen</h1>
+          <p>Powerbanks en lampen voor thuis en onderweg — en complete zonnestroompakketten voor wie zelf duurzame elektriciteit wil opwekken. Direct bestellen of offerte aanvragen.</p>
+          <div style="margin-top:14px;display:flex;gap:10px">
+            <button class="btn" onclick="scrollToSection('producten')">Bekijk producten</button>
+            <a href="#contact" style="align-self:center;color:var(--muted);font-size:13px">Offerte aanvragen</a>
+          </div>
+        </div>
+        <div style="width:360px">
+          <div style="background:linear-gradient(180deg,#061028,#071a32);padding:16px;border-radius:12px">
+            <div style="font-weight:700">Waarom kiezen voor ons?</div>
+            <ul class="small" style="margin-top:8px">
+              <li>Eigen voorraad voor snelle levering</li>
+              <li>Advies & installatie voor zonnestroompakketten</li>
+              <li>Garantie en service</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="producten">
+        <h3 style="margin-top:16px">Producten</h3>
+        <div class="products">
+          <div class="product">
+            <img src="https://via.placeholder.com/400x240?text=Powerbank" alt="Powerbank 20.000mAh" />
+            <div>
+              <div style="font-weight:700">Powerbank 20.000mAh</div>
+              <div class="small">Snel opladen, USB-C PD, compact</div>
+            </div>
+            <div class="price">€49 — <span class="small">incl. btw</span></div>
+            <div style="display:flex;gap:8px;margin-top:auto">
+              <button class="btn" onclick="addToCart(1,'Powerbank 20.000mAh',49)">Voeg toe</button>
+              <button onclick="sendInquiry(1)" style="background:transparent;border:none;color:var(--muted);cursor:pointer">Vraag info</button>
+            </div>
+          </div>
+
+          <div class="product">
+            <img src="https://via.placeholder.com/400x240?text=Zonne+Lantaarn" alt="Zonne-lamp LED" />
+            <div>
+              <div style="font-weight:700">Zonne-lamp LED</div>
+              <div class="small">Waterdicht, lange batterijduur, dimbaar</div>
+            </div>
+            <div class="price">€39 — <span class="small">incl. btw</span></div>
+            <div style="display:flex;gap:8px;margin-top:auto">
+              <button class="btn" onclick="addToCart(2,'Zonne-lamp LED',39)">Voeg toe</button>
+              <button onclick="sendInquiry(2)" style="background:transparent;border:none;color:var(--muted);cursor:pointer">Vraag info</button>
+            </div>
+          </div>
+
+          <div class="product">
+            <img src="https://via.placeholder.com/400x240?text=Zonnestroom+pakket" alt="Zonnestroom pakket 1kW" />
+            <div>
+              <div style="font-weight:700">Zonnestroompakket 1 kW</div>
+              <div class="small">Paneel + omvormer + montage-opties. Perfect voor klein verbruik.</div>
+            </div>
+            <div class="price">€1299 — <span class="small">indicatie</span></div>
+            <div style="display:flex;gap:8px;margin-top:auto">
+              <button class="btn" onclick="addToCart(3,'Zonnestroompakket 1 kW',1299)">Offerte</button>
+              <button onclick="sendInquiry(3)" style="background:transparent;border:none;color:var(--muted);cursor:pointer">Vraag advies</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="service">
+        <h3 style="margin-top:18px">Service & installatie</h3>
+        <div style="background:var(--glass);padding:14px;border-radius:10px;color:var(--muted)">
+          Wij leveren niet alleen producten, maar ook advies en volledige installatie voor zonnestroompakketten in jouw regio. Voor grote projecten maken we graag een maatwerkofferte.
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:18px">
+        <h3>Contact / Offerte</h3>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:8px">
+          <div style="background:var(--glass);padding:12px;border-radius:10px">
+            <form id="contactForm" onsubmit="checkout(event)">
+              <input id="naam" type="text" placeholder="Naam" required />
+              <input id="email" type="email" placeholder="E‑mail" required />
+              <input id="telefoon" type="text" placeholder="Telefoon (optioneel)" />
+              <select id="type">
+                <option value="bestelling">Bestelling</option>
+                <option value="offerte">Offerte installatie</option>
+                <option value="advies">Technisch advies</option>
+              </select>
+              <textarea id="bericht" placeholder="Bericht / aanvullende info"></textarea>
+              <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+                <button type="submit" class="btn">Verstuur bestelling / aanvraag</button>
+                <div style="color:var(--muted);font-size:13px">Of mail naar <a href="mailto:info@zonnepower.nl">info@zonnepower.nl</a></div>
+              </div>
+            </form>
+          </div>
+
+          <div style="background:var(--glass);padding:12px;border-radius:10px">
+            <div style="font-weight:700">Betaal & levering</div>
+            <div class="small" style="margin-top:8px">Momenteel worden bestellingen behandeld via e‑mail/handmatige offerte. Voor live betalingen kunnen we integreren met iDEAL / Mollie of Stripe (aanbevolen voor NL).</div>
+            <div style="margin-top:12px">
+              <strong>Voorraad & verzending</strong>
+              <div class="small">Snelle verzending voor voorraadartikelen — maatwerkpakketten op aanvraag. Toon verzendinformatie en levertijden hier.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer style="margin-top:28px;color:var(--muted)">© 2025 Zonne & Power — Alle rechten voorbehouden</footer>
+  </div>
+
+  <div class="cart" id="cart">
+    <h4>Winkelwagen</h4>
+    <div class="cart-list" id="cartList">
+      <div class="small">Je winkelwagen is leeg</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div class="small">Totaal: <span id="cartTotal">€0</span></div>
+      <div>
+        <button onclick="emailCart()" class="btn">Bestel via e‑mail</button>
+      </div>
+    </div>
+    <div style="margin-top:8px;text-align:center" class="small">Of gebruik het contactformulier voor offertes</div>
+  </div>
+
+  <script>
+    // Eenvoudige client-side winkelwagen en e-mail checkout
+    const cart = [];
+    function addToCart(id,name,price){
+      const existing = cart.find(i=>i.id===id);
+      if(existing){ existing.qty++; } else { cart.push({id,name,price,qty:1}); }
+      renderCart();
+      alert(name + ' toegevoegd aan winkelwagen');
+    }
+    function renderCart(){
+      const list = document.getElementById('cartList');
+      list.innerHTML = '';
+      if(cart.length===0){ list.innerHTML = '<div class="small">Je winkelwagen is leeg</div>'; document.getElementById('cartTotal').textContent = '€0'; return }
+      let total = 0;
+      cart.forEach(item=>{
+        total += item.price * item.qty;
+        const row = document.createElement('div'); row.className='cart-row';
+        row.innerHTML = `<div style=\"flex:1\">${item.name} <span class=\"small\">x${item.qty}</span></div><div>€${(item.price*item.qty).toFixed(2)}</div>`;
+        list.appendChild(row);
+      });
+      document.getElementById('cartTotal').textContent = '€' + total.toFixed(2);
+    }
+
+    function emailCart(){
+      if(cart.length===0){ alert('Je winkelwagen is leeg.'); return }
+      const naam = prompt('Naam voor bestelling (verplicht)'); if(!naam){alert('Naam verplicht');return}
+      const email = prompt('E‑mail voor contact (verplicht)'); if(!email){alert('E‑mail verplicht');return}
+      const itemsText = cart.map(i=>`${i.name} x${i.qty} — €${(i.price*i.qty).toFixed(2)}`).join('\\n');
+      const total = cart.reduce((s,i)=>s+i.price*i.qty,0).toFixed(2);
+      const subject = encodeURIComponent('Bestelling: ' + naam);
+      const body = encodeURIComponent(`Beste,\n\nIk plaats een bestelling:\n\n${itemsText}\n\nTotaal: €${total}\n\nNaam: ${naam}\nE‑mail: ${email}\n\nGraag reactie met betaal- en verzendinstructies.`);
+      window.location.href = `mailto:info@zonnepower.nl?subject=${subject}&body=${body}`;
+    }
+
+    function sendInquiry(id){
+      const mapping = {1:'Powerbank 20.000mAh',2:'Zonne-lamp LED',3:'Zonnestroompakket 1 kW'};
+      const subject = encodeURIComponent('Informatie over ' + mapping[id]);
+      window.location.href = `mailto:info@zonnepower.nl?subject=${subject}`;
+    }
+
+    function checkout(e){
+      e.preventDefault();
+      const naam = document.getElementById('naam').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const type = document.getElementById('type').value;
+      const bericht = document.getElementById('bericht').value.trim();
+      const subject = encodeURIComponent((type==='offerte'?'Offerte aanvraag':'Bestelling / Aanvraag') + ' — ' + naam);
+      const body = encodeURIComponent(bericht + '\n\nNaam: ' + naam + '\nE‑mail: ' + email + '\nTelefoon: ' + document.getElementById('telefoon').value);
+      window.location.href = `mailto:info@zonnepower.nl?subject=${subject}&body=${body}`;
+    }
+
+    function scrollToSection(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
+
+    // init
+    renderCart();
+  </script>
+</body>
+</html>
